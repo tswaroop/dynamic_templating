@@ -1,0 +1,91 @@
+/* Modified from http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html */
+
+input[type=range].slider {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    /* border: 1px solid white; */
+    
+    /*required for proper track sizing in FF*/
+    width: 100%;
+}
+input[type=range].slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range].slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    background: linear-gradient(135deg, #fff, #ccc);
+    margin-top: -4px;
+}
+input[type=range].slider:focus {
+    outline: none;
+}
+input[type=range].slider:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range].slider::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range].slider::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    background: linear-gradient(135deg, #fff, #ccc);
+}
+
+/*hide the outline behind the border*/
+input[type=range].slider:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+input[type=range].slider::-ms-track {
+    width: 100%;
+    height: 5px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range].slider::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range].slider::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range].slider::-ms-thumb {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    background: linear-gradient(135deg, #fff, #ccc);
+}
+input[type=range].slider:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range].slider:focus::-ms-fill-upper {
+    background: #ccc;
+}

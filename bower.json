@@ -1,0 +1,27 @@
+{
+  "name": "gramex1",
+  "authors": [
+    " <>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "UNLICENSED",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "underscore": "^1.8.3",
+    "g": "https://code.gramener.com/s.anand/g.git"
+  },
+  "resolutions": {
+    "jquery": "1.9.1 - 2"
+  }
+}

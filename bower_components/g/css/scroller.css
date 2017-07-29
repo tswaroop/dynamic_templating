@@ -1,0 +1,44 @@
+.scroller {                                     /* Essential styling for scrollers */
+    transform: translate3d(0,0,0);              /* Enable GPU hardware acceleration */
+    -webkit-transform: translate3d(0,0,0);
+    white-space: nowrap;                        /* Force everything in 1 line */
+    overflow-x: auto;                           /* Allowing overflow horizontally, with scroll-bar */
+    overflow-y: hidden;                         /* Never display the vertical scroller */
+    -webkit-overflow-scrolling: touch;          /* Momentum scrolling for iOS */
+            overflow-scrolling: touch;
+    -webkit-user-select: none;                  /* Dragging does not select anything */
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.scroller {                                     /* Optional styling for scrollers */
+    -ms-scrollbar-base-color: rgba(0,0,0,.1);
+    -ms-scrollbar-face-color: rgba(0,0,0,.5);
+}
+
+.scroller-cell { /* Like a sleeper cell? (Will this comment trigger NSA's PRISM?) */
+    vertical-align: top;                        /* Unequal height boxes hang from the top */
+    display: inline-block;                      /* Allow width and height settings */
+    white-space: normal;                        /* Restore white-space */
+    -webkit-user-select: initial;               /* Restore selection */
+       -moz-user-select: initial;
+        -ms-user-select: initial;
+            user-select: initial;
+  -webkit-backface-visibility: hidden;          /* To offset translate3d */
+     -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.no-touch .scroller::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+    border-radius: 1em;
+}
+
+.no-touch .scroller::-webkit-scrollbar {
+    height: .75em;
+}
+
+.no-touch .scroller::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background-color: rgba(0,0,0,.5);
+}

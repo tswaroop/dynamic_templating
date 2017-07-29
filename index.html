@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<style>
+</style>
+</head><body>
+<h1></h1>
+<div class="filters">
+    <a class="urlfilter btn btn-default even" data-toggle="toggle" href="?even=1">even</a>
+    <a class="urlfilter btn btn-default mul" data-toggle="toggle" href="?mul=1">MUL by 10</a>
+    <input type="text" class="user_value"/>
+</div>
+<script type="text/html" id="template_1">
+   <% _.each(data, function(key) { %>
+      <li>
+         <span><%=key %></span>
+       </li>
+   <% }); %>
+</script>
+<div>
+  <ul id="list_2"></ul>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/g/dist/G.min.js"></script>
+<script>
+var data = [1,2,3,5,6,3,8,2,9,10,20,30]
+$('body')
+  .urlfilter({
+    selector: '.urlfilter',
+    target: 'pushState'
+  })
+  .on('loaded.g.urlfilter', redraw)
+  .on('change keyup', '.user_value', function() {
+    var url = G.url.parse(location.href)
+    url.update({value: $(this).val()})
+    history.pushState({}, '', url.toString())
+    redraw()
+  })
+function redraw() {
+  var params = G.url.parse(location.href).searchKey
+  var result = data
+  console.log(params,result);
+  if (params.even) {
+    result = _.filter(result, function(v) { return v % 2 == 0 }) }
+  if (params.mul) { result = _.filter(result, function(v) { return v % 10 === 0 })}
+  if (params.value) {
+    result = _.filter(result, function(v) { return v < +params.value })
+    $('.user_value').val(params.value)
+  }
+  $("#template_1").template({data: result});
+}
+redraw()
+</script>
+</body>
+</html>

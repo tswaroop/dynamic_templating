@@ -1,0 +1,27 @@
+{
+  "name": "g",
+  "authors": [
+    "S Anand <s.anand@gramener.com>"
+  ],
+  "description": "Client-side libraries for Gramex",
+  "main": "test/lib/G.js",
+  "moduleType": [],
+  "license": "Gramener",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "07b548fd1a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "07b548fd1ad8bb38e608fada5505b8c379eff638"
+  },
+  "_source": "https://code.gramener.com/s.anand/g.git",
+  "_target": "*",
+  "_originalSource": "https://code.gramener.com/s.anand/g.git"
+}

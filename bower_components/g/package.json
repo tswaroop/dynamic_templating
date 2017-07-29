@@ -1,0 +1,22 @@
+{
+  "name": "g",
+  "version": "0.0.10",
+  "description": "Gramex library",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node node_modules/rollup/bin/rollup --format=umd --name=G --output=test/lib/G.js -- index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.gramener.com:s.anand/g.git"
+  },
+  "author": "S Anand <s.anand@gramener.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "rollup": "^0.34.1"
+  }
+}
